@@ -23,6 +23,6 @@ function shiftToLast(arr) {
         }
     }
 }
-const arr = [8];
+const arr = [1,-1,2,-3,1];
 shiftToLast(arr);
 console.log(arr)

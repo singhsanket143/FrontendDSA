@@ -1,4 +1,4 @@
-# Frontend DSA
+# Frontend DSA Class Plan
 
 |  | Classes | Date |
 | --- | --- | --- |

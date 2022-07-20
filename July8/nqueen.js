@@ -35,6 +35,7 @@ function f(r, n) {
     if(r == n) {
         // we will reach r == n when we have successfully placed the last queen on the last row
         // which means we found one possible way
+        console.log(grid);
         return 1;
     }
     // We will try to safely place the current queen on the rth row

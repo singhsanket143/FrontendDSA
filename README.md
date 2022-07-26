@@ -80,4 +80,4 @@
 ### 9. Algorithms: Binary Search Part-1
 | July, 11 |  |
 | --- | --- |
-| [Notes](July11/Searching.pdf) | Binary Search |
+| [Notes](July11/Searching.pdf) | Binary Search, <BR>UPPER BOUND, <BR>LOWER BOUND |

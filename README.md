@@ -11,6 +11,12 @@
 | 7 | [Advanced Problem Solving On Recursion](/July9/) | July, 9 |
 | 8 | [Doubt Solving](/July10/) | July, 10 |
 | 9 | [Algorithms: Binary Search Part-1](/July11/) | July, 11 |
+| 10 | [Algorithms: Binary Search Part-2](/July15/) | July, 15 |
+| 11 | [Doubt Solving](/July17/) | July, 17 |
+| 12 | [Revision: Problem Solving Binary Search](/JULY18/) | July, 18 |
+| 13 | [Problem Solving: Binary Search on Answer](/Jul20/) | July, 20 |
+| 14 | [Problem Solving: Binary Search on Answer (Contd.) ](/Jul21/) | July, 21 |
+| 15 | [Revision on Merge Sort](/mergesort/) | July, 25 |
 
 <br>
 
@@ -78,6 +84,67 @@
 | [CSES Problem Set](https://cses.fi/problemset/task/1636) | Coin Combinations II |
 
 ### 9. Algorithms: Binary Search Part-1
+
 | July, 11 |  |
 | --- | --- |
-| [Notes](July11/Searching.pdf) | Binary Search |
+| [Notes](July11/Searching.pdf) | Binary Search, <BR>UPPER BOUND, <BR>LOWER BOUND |
+
+### 10 Algorithms: Binary Search Part-2
+
+| July, 15 |  |
+| --- | --- |
+| [Notes](/July15/Binary_Search_Problems.pdf) |  |
+| 1.| Given a sorted array and an element X, check if the element is repeated. |
+| 2.| Given a sorted array where every element is present twice except one element. Find the single occurring element. (Element is not given.) |
+| 3.| Given an array of length n, where elements are sorted, all the elements are unique but one element is present twice, and the elements lie in the range [0, n-2]. Find the repeating element. |
+| Home Work| What if instead of dividing the array into two parts, we start dividing the array into 3 parts. As (log3n < log2n) ? |
+
+### 11 Doubt Solving
+
+| July, 17 |  |
+| --- | --- |
+| Notes | XOR<br>N Queens<br>Subsequence Vs Subset |
+| 1.  | Given a sorted rotated array, find the min element in less than O(n). |
+
+### 12 Revision: Problem Solving Binary Search
+
+| July, 18 |  |
+| --- | --- |
+| Notes |  |
+| 1. | Find three unique set(s) having an equal sum. |
+| 2. | In an array find a pair with a given sum |
+| 3. | Total Triplets |
+| Home Work | H/W gave on Jul 15: <br><br>Do you think it’s a good idea to divide your search space into 3 parts (Ternary Search)?<br><br>Dividing it into 2 parts makes sense because it gives you less number of comparisons, but, How many comparisons?<br><br>If we divide merge sort into 3 subarrays instead of 2, How many comparisons will increase? Calculate the factor by which it will increase. |
+
+### 13 Problem Solving: Binary Search on Answer
+
+| July, 20 |  |
+| --- | --- |
+| [Notes](/Jul20/Binary_Search_Problems_-_Medium_-_Hard.pdf) | Binary Search Problems - Medium - Hard |
+| 1. [Codeforces](https://codeforces.com/problemset/problem/1324/D): | Pair of Topics. Find the number of good pairs of topics.  |
+| 2. [SPOJ](https://www.spoj.com/problems/NOTATRI/): | Not a Triangle. Triplet that does not form a triangle. |
+| 3. [SPOJ](https://www.spoj.com/problems/ABCDEF/): | Find the total number of sextuples. |
+| Home Work | Knowing that triplets need to be compared, can we somehow use binary search to solve the question? |
+
+### 14 Problem Solving: Binary Search on Answer (Contd.)
+
+| July, 21 |  |
+| --- | --- |
+| [Notes](/Jul21/Binary_Search_Problems_-_Medium_-_Hard%20(1).pdf) |  |
+| 4. [SPOJ](https://www.spoj.com/problems/SUBSUMS/): | Subset Sums. |
+| 5.  | Given a number x, calculate the integer part of the square root of x. |
+| 6.  | Now, calculate with more precision, up to 3 decimal places. |
+| Home Work | Write the code for handling the precision. |
+
+### 15 Revision on Merge Sort
+
+| July, 25 |  |
+| --- | --- |
+| [Notes](/mergesort/Untitled%20(271).pdf) | Merge Sort |
+| [mergesort.js](/mergesort/mergesort.js) |  |
+| [mergetwosortedarray.js](/mergesort/mergetwosortedarray.js) |  |
+| [invcnt.js](/mergesort/invcnt.js), [SPOJ](https://www.spoj.com/problems/INVCNT/) | Inversion Count <br>Double Inversion Count |
+| 1.  | Given 2 sorted arrays of different sizes, combine them such that the combined array is sorted. (Merge 2 sorted arrays) |
+| 2.  | Given an unsorted array, can we sort it, using the same algorithm? |
+| 3. | Why do we only divide the array into 2 parts and not in 3 in merge sort? |
+| [Stackoverflow](https://stackoverflow.com/questions/10342890/merge-sort-time-and-space-complexity) | Merge Sort Time & Space Complexity. |

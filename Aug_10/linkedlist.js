@@ -10,6 +10,8 @@ class LinkedList {
 	constructor() {
 		// when we initialise a new linked list head will be empty
 		this.head = null;
+		this.start = null; // temporary variable for problem solving
+		this.flag = null; // temporary variable for problem solving
 	}
 
 	addAtHead(data) {
@@ -121,12 +123,103 @@ class LinkedList {
 			temp = temp.next;
 		}
 	}
+
+	reverseLLPointerIterative() {
+		/**
+		 * Time: O(n)
+		 * Space: O(1)
+		 */
+		let prev = null;
+		let curr = this.head;
+		while(curr != null) {
+			let temp = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = temp;
+		}
+		this.head = prev;
+	}
+
+	f(curr) {
+		/**
+		 * Time: O(n)
+		 * Space: O(n) // due to call stack space, call stack will have n entries when we reach tail
+		 */
+		if(curr.next == null) {
+			// if node's next is null it is the tail node
+			return curr;
+		}
+		let tail = this.f(curr.next); // recursively assume it reverses
+		curr.next.next = curr; // self work
+		curr.next = null; // self work
+		return tail;
+	}
+	reverseLLPointersRecursive() {
+		let tail = this.f(this.head);
+		this.head = tail;
+	}
+
+	reverseLLValueIterative() {
+		/**
+		 * Time: O(n^2)
+		 * Space: O(1)
+		 */
+		let len = 0;
+		let temp = this.head;
+		while(temp != null) {
+			temp = temp.next;
+			len++;
+		}
+		let curr = this.head;
+		for(let i = 0; i < len/2; i++) {
+			let temp = this.head;
+			// console.log(curr.data);
+			for(let j = 0; j < len - i - 1; j++) {
+				temp = temp.next;
+			}
+			let v = curr.data;
+			curr.data = temp.data;
+			temp.data = v;
+			curr = curr.next;
+		}
+	}
+
+	g(curr) {
+		/**
+		 * Time: O(n)
+		 * Space: O(n)
+		 */
+		if(curr == null) {
+			return;
+		}
+		this.g(curr.next);
+		if(this.start == curr || curr.next == this.start) {
+			this.flag = false;
+		}
+		if(this.flag == true) {
+			let temp = this.start.data;
+			this.start.data = curr.data;
+			curr.data = temp;
+			this.start = this.start.next;
+		}
+	}
+	reverseLLValueRecursive() {
+		this.start = this.head;
+		this.flag = true;
+		this.g(this.head);
+	}
+
 }
 
 let ll = new LinkedList();
+ll.addAtHead(7);
+ll.addAtHead(6);
 ll.addAtHead(5);
 ll.addAtHead(4);
 ll.addAtHead(3);
 ll.addAtHead(2);
 ll.addAtHead(1);
+ll.display();
+console.log("***");
+ll.reverseLLValueRecursive();
 ll.display();

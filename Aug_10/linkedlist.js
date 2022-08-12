@@ -212,14 +212,14 @@ class LinkedList {
 }
 
 let ll = new LinkedList();
-ll.addAtHead(7);
-ll.addAtHead(6);
-ll.addAtHead(5);
-ll.addAtHead(4);
-ll.addAtHead(3);
-ll.addAtHead(2);
+// ll.addAtHead(7);
+// ll.addAtHead(6);
+// ll.addAtHead(5);
+// ll.addAtHead(4);
+// ll.addAtHead(3);
+// ll.addAtHead(2);
 ll.addAtHead(1);
 ll.display();
-console.log("***");
-ll.reverseLLValueRecursive();
-ll.display();
+// console.log("***");
+// ll.reverseLLValueRecursive();
+// ll.display();

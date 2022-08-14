@@ -7,6 +7,7 @@ Product.prototype.display = function () {
 }
 
 function phone(m) {
+    Product.call(tis, "Phone"); // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call
     this.model = m;
 }
 

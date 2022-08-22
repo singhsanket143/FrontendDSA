@@ -57,13 +57,11 @@ class LRU {
             } else {
                 let prev = this.dll.tail.prev;
                 delete this.mp[this.dll.tail.data[0]]
-                // console.log(this.dll.tail);
-                // console.log(prev);
+                
                 prev.next = null;
                 this.dll.tail.prev = null;
                 this.dll.tail = prev;
                 let newNode = this.dll.insertAtHead([key, value]);
-                // this.total++;
                 this.mp[key] = newNode;
             }
             

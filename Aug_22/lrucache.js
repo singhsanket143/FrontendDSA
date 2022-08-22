@@ -78,6 +78,7 @@ class LRU {
                 keyNode.next.prev = prev;
             }
             keyNode.next = this.dll.head;
+            this.dll.head.prev = keyNode;
             keyNode.prev = null;
             this.dll.head = keyNode;
             if(keyNode == this.dll.tail) this.dll.tail = prev;

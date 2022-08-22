@@ -68,7 +68,10 @@ class LRU {
         } else {
             let keyNode = this.mp[key]; // this is the node where our key value pair is present
             keyNode.data[1] = value; // on every node's data property we have an array 0th -> key 1st -> value
+            if(keyNode == this.dll.head) return;
+            
             // now shift the node to head
+
             let prev = keyNode.prev; 
             prev.next = keyNode.next; // 1->2->3 // prev -> 1
             if(keyNode.next != null) {
@@ -85,7 +88,7 @@ class LRU {
         if(!this.mp[key]) return undefined;
         let keyNode = this.mp[key];
         const ans = keyNode.data[1];
-        
+        if(keyNode == this.dll.head) return ans;
         let prev = keyNode.prev; // 4 -> 3 -> 2 , prev = 3, keynode = 2
         // console.log(prev);
         prev.next = keyNode.next; // 
@@ -111,6 +114,9 @@ cache.put(1,"Sanket");
 cache.put(2, "Shaik");
 cache.put(3, "Sarthak");
 cache.put(4, "JD");
+// cache.display();
+cache.put(2, "Shaik");
+cache.display();
 console.log(cache.get(2));
 cache.put(5, "Pulkit");
 console.log(cache.get(1));

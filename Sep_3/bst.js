@@ -85,7 +85,7 @@ class BST {
             let temp = root.left;
             while(temp.right != null) temp = temp.right;
             root.data = temp.data;
-            this.removeHelper(root.left,temp.data);
+            root.left = this.removeHelper(root.left,temp.data);
             return root;
         }
         if(x < root.data) {
@@ -93,6 +93,7 @@ class BST {
         } else {
             root.right = this.removeHelper(root.right, x);
         }
+        return root;
     }
 
     remove(x) {

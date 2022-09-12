@@ -101,6 +101,23 @@ class BST {
     }
 }
 
+function searchinBST(root, x) {
+    if(root == null) return false;
+    if(root.data == x) return true;
+
+    // let result = searchinBST(root.left, x) || searchinBST(root.right, x);
+    // return result;
+    // let left = searchinBST(root.left, x);
+    // if(left == true) return true;
+    // let right = searchinBST(root.right, x);
+    // if(right == true) return true;
+    if(x < root.data) {
+        return searchinBST(root.left, x);
+    } else {
+        return searchinBST(root.right, x);
+    }
+}
+
 
 let bst = new BST();
 bst.insert(10);
@@ -108,9 +125,11 @@ bst.insert(5);
 bst.insert(45);
 bst.insert(19);
 bst.insert(3);
-bst.preorder();
+// bst.preorder();
 
-bst.inorder();
+// bst.inorder();
+
+console.log(searchinBST(bst.root, 2))
 
 
 /**

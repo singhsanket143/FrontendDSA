@@ -31,6 +31,16 @@ class Hashmap {
     }
 
     insert(k, v) {
+        if(this.search(k)) {
+            // then we just need to update
+            let bucketIndex = this.hash(k);
+            let temp = this.arr[bucketIndex];
+            while(temp != null && temp.key != k) {
+                temp = temp.next;
+            } 
+            temp.value = v;
+            return;
+        }
         let bucketIndex = this.hash(k);
         let newNode = new Node(k, v);
         // add at head in ll
@@ -64,6 +74,16 @@ class Hashmap {
         }
     }
 
+    search(key) {
+        let bucketIndex = this.hash(key);
+        let temp = this.arr[bucketIndex];
+        while(temp != null) {
+            if(temp.key == key) return temp.value;
+            temp = temp.next;
+        }
+        return undefined;
+    }
+
     display() {
         console.log(this.arr);
     }
@@ -71,15 +91,13 @@ class Hashmap {
 
 let hm = new Hashmap();
 hm.insert("Sanket", 1);
-console.log("*******");
-hm.display()
-hm.insert("Sandeepan", 2);
-console.log("*******");
-hm.display()
-hm.insert("Sameer", 3);
-console.log("*******");
-hm.display()
-hm.insert("varun", 4);
-console.log("*******")
-hm.display()
 
+hm.insert("Sandeepan", 2);
+
+hm.insert("Sameer", 3);
+
+hm.insert("varun", 4);
+hm.insert("Sameer", 7);
+
+console.log(hm.search("varun"));
+console.log(hm.search("Sameer"));

@@ -31,7 +31,7 @@ class Hashmap {
     }
 
     insert(k, v) {
-        if(this.search(k)) {
+        if(this.search(k) !== undefined) {
             // then we just need to update
             let bucketIndex = this.hash(k);
             let temp = this.arr[bucketIndex];
@@ -90,7 +90,7 @@ class Hashmap {
 }
 
 let hm = new Hashmap();
-hm.insert("Sanket", 1);
+hm.insert("Sanket", [1,2,3]);
 
 hm.insert("Sandeepan", 2);
 
@@ -101,3 +101,4 @@ hm.insert("Sameer", 7);
 
 console.log(hm.search("varun"));
 console.log(hm.search("Sameer"));
+hm.display()

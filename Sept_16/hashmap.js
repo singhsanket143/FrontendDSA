@@ -19,6 +19,7 @@ class Hashmap {
     }
 
     hash(key) {
+        // O(longth of key) -> O(l)
         let ans = 0;
         let c = 101;
         let m = this.currSize;
@@ -91,11 +92,11 @@ class Hashmap {
 
 let hm = new Hashmap();
 hm.insert("Sanket", [1,2,3]);
-
+hm.display();
 hm.insert("Sandeepan", 2);
-
+hm.display();
 hm.insert("Sameer", 3);
-
+hm.display();
 hm.insert("varun", 4);
 hm.insert("Sameer", 7);
 

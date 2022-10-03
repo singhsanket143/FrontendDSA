@@ -4,29 +4,28 @@
  */
 
  var count = 0;
- function isSquareful(arr) {
-     for(let i = 1; i < arr.length; i++) {
-         let curr = arr[i];
-         let prev = arr[i-1];
-         let sumOfAdjacent = curr + prev;
-         let sqrt = Math.floor(Math.sqrt(sumOfAdjacent));
-         if(sqrt * sqrt != sumOfAdjacent) return false;
-     }
-     return true;
- }
+
  function swap(arr, i, j) {
      let temp = arr[i];
      arr[i] = arr[j];
      arr[j] = temp;
  }
  
+ function isPairSquareful(a, b) {
+     let sum = a+b;
+     let sqrt = Math.floor(Math.sqrt(sum));
+     return sqrt*sqrt == sum;
+ }
+ // [10,11,12,13] start = 2 -> 10,11,12,13 , 10,11,13,12
  function permutation (arr, start) {
      if(start == arr.length) {
          // base case
-         if(isSquareful(arr)) {
+         if(isPairSquareful(arr[start-1], arr[start-2]))
              count++;
-         }
          return
+     }
+     if(start >= 2 && !isPairSquareful(arr[start-1], arr[start-2])) {
+         return;
      }
      let visited = {};
      for(let i = start; i < arr.length; i++) {
